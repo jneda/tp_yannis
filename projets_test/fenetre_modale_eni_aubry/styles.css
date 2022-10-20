@@ -51,19 +51,19 @@ a.open-modal {
 
 @keyframes bounce {
   0% {
-    transform: scale3d(0.1, 0.1, 1);
+    transform: scale(0.1, 0.1);
     box-shadow: 0 3px 20px rgba(0, 0, 0, 0.9);
   }
   55% {
-    transform: scale3d(1.08, 1.08, 1);
+    transform: scale(1.08, 1.08);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0);
   }
   75% {
-    transform: scale3d(0.95, 0.95, 1);
+    transform: scale(0.95, 0.95);
     box-shadow: 0 0px 20px rgba(0, 0, 0, 0.9);
   }
   100% {
-    transform: scale3d(1, 1, 1);
+    transform: scale(1, 1);
     box-shadow: 0 3px 20px rgba(0, 0, 0, 0.9);
   }
 }
@@ -86,10 +86,10 @@ masque .modal:target sur le div du contenu de la fenêtre modale */
 
 @keyframes minimise {
   0% {
-    transform: scale3d(1, 1, 1);
+    transform: scale(1, 1);
   }
   100% {
-    transform: scale3d(0.1, 0.1, 1);
+    transform: scale(0.1, 0.1);
   }
 }
 
