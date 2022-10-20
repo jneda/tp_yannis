@@ -1,0 +1,92 @@
+/* Styles généraux */
+
+hr {
+  margin-top: 1.4rem;
+  margin-bottom: 1.4rem;
+}
+
+/* Syles pour le déplacement simple */
+
+#boite {
+  background-color: red;
+  position: relative;
+  width: 100px;
+  height: 100px;
+  margin-bottom: 1rem;
+}
+
+.boite-bouge {
+  animation: boiteRouge 5s infinite;
+}
+
+/* Animation de déplacement simple */
+
+@keyframes boiteRouge {
+  0% {
+    left: 10px;
+  }
+  50% {
+    left: 400px;
+  }
+  100% {
+    left: 10px;
+  }
+}
+
+/* Styles pour rotation et transparence */
+
+#image {
+  width: 230px;
+  height: 167px;
+  margin: 0 auto;
+}
+
+#image img {
+  max-height: 100%;
+}
+
+.image-tourne {
+  animation: tourne 5s infinite;
+}
+
+#tourne-image-btn {
+  margin-top: 2rem;
+}
+
+/* Animation de rotation et transparence */
+
+@keyframes tourne {
+  0% {
+    opacity: 1;
+    transform: rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(360deg);
+  }
+}
+
+/* Styles du formulaire */
+
+#inscription {
+  width: 300px;
+  padding: 10px;
+  border: 1px solid #333;
+  border-radius: 10px;
+  margin-bottom: 1.6rem;
+}
+
+.clignote {
+  animation: ombre ease-in infinite alternate 500ms;
+}
+
+/* Animation de clignotement */
+
+@keyframes ombre {
+  0% {
+    box-shadow: 0 0 15px red;
+  }
+  100% {
+    box-shadow: 0 0 15px yellow;
+  }
+}

@@ -1,0 +1,41 @@
+* {
+  box-sizing: border-box;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.pop-up {
+  position: absolute;
+  top: 20%;
+  left: 20%;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+.popping-up {
+  animation-duration: 3s;
+  animation-name: popping-up;
+}
+
+.popping-down {
+  animation-duration: 3s;
+  animation-name: popping-up;
+  animation-direction: reverse;
+}
+
+@keyframes popping-up {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

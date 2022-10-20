@@ -1,0 +1,100 @@
+/* Styles bouton */
+
+a.open-modal {
+  margin: 1rem auto;
+  display: block;
+  width: 200px;
+  background: #ccc;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  padding: 10px;
+  border-radius: 7px;
+  text-shadow: 0 1px 0 #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+/* Styles contenu fenêtre modale */
+
+.modal > div {
+  width: 500px;
+  background: #fff;
+  position: relative;
+  margin: 10% auto;
+  /* Fioritures */
+  padding: 30px;
+  border-radius: 7px;
+  box-shadow: 0 3px 20px rgba(0, 0, 0, 0.9);
+  text-shadow: 0 1px 0 #fff; 
+}
+
+/* Styles fenêtre modale */
+
+.modal {
+  /* masque d'arrière-plan */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 10000;
+  /* caché et non interactif par défaut */
+  opacity: 0;
+  pointer-events: none;
+  /* utilisation de la transformation de transparence à l'ouverture */
+  transition: opacity 500ms ease-in;
+}
+
+/* Définition de l'animation d'ouverture */
+
+@keyframes bounce {
+  0% {
+    transform: scale3d(0.1, 0.1, 1);
+    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.9);
+  }
+  55% {
+    transform: scale3d(1.08, 1.08, 1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0);
+  }
+  75% {
+    transform: scale3d(0.95, 0.95, 1);
+    box-shadow: 0 0px 20px rgba(0, 0, 0, 0.9);
+  }
+  100% {
+    transform: scale3d(1, 1, 1);
+    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.9);
+  }
+}
+
+/* Déclenchement de l'animation d'ouverture : s'applique à l'utilisation du
+masque .modal:target sur le div du contenu de la fenêtre modale */
+
+.modal:target > div {
+  animation-name: bounce;
+}
+
+/* Modification de l'opacité */
+
+.modal:target {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Animation de fermeture */
+
+@keyframes minimise {
+  0% {
+    transform: scale3d(1, 1, 1);
+  }
+  100% {
+    transform: scale3d(0.1, 0.1, 1);
+  }
+}
+
+/* Déclenchement de l'animation de fermeture */
+
+.modal > div {
+  animation: minimise 500ms linear;
+}
