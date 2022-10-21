@@ -1,5 +1,152 @@
+/* Styles de l'overlay de la fenêtre modale */
+
+#modal-form-overlay {
+  /* occupe tout l'écran */
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* debug */
+  background: rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  visibility: hidden;
+}
+
+/* Styles du formulaire */
+
+#product-form {
+  max-width: 80%;
+  background: white;
+  color: black;
+  padding: 1rem;
+  border-radius: 6px;
+}
+
+#product-form * {
+  box-sizing: border-box;
+}
+
+#product-form .form-input {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+#product-form input,
+#product-form textarea {  
+  padding: 0.2rem 0.4rem 0.2rem 0.4rem;
+}
+
+#product-form .form-input > * {
+  margin-bottom: 0.8rem;
+}
+
+#product-form .column-inputs {
+  display: flex;
+  justify-content: space-between;
+}
+
+#product-form .column-inputs .form-input {
+  max-width: 32%;
+  flex: 1;
+}
+
+#product-form .form-input.checkbox-hr input[attr=""] {
+  margin-right: 0.6rem;
+}
+
+#product-form .form-input.checkbox-hr > * {
+  margin: 0;
+}
+
+#product-form .form-input.checkbox-hr p {
+  font-size: 0.6rem;
+  color: #666;
+  margin: 0.2rem 0 0.6rem;
+}
+
+#product-form .button {
+  text-align: center;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#product-form a:nth-of-type(1) {
+  margin-top: 1rem;
+}
+
+#product-form .confirm-btn {
+  color: #fff;
+  background: #2046f2;
+}
+
+/* media query pour forcer l'affichage du bouton en vue mobile */
+
 @media (max-width: 991px) {
   .navigation__cta {
    display:block;
+  }
+}
+
+/* Classes d'animation */
+
+.fading-in {
+  animation: fade-in 1s ease 0s 1 normal forwards;
+}
+
+#modal-form-overlay.fading-out {
+  animation: fade-out 1s ease 0s 1 normal forwards;
+}
+
+.scaling-in {
+  animation: scale-in 1s ease 0s 1 normal forwards;
+}
+
+.scaling-out {
+  animation: scale-out 1s ease 0s 1 normal forwards;
+}
+
+/* Changement d'opacité */
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Animation d'entrée avec scale */
+
+@keyframes scale-in {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes scale-out {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
   }
 }

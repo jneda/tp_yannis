@@ -30,6 +30,8 @@ form {
   max-width: 20rem;
   margin: 2rem auto;
   padding: 2rem;
+  /* debug */
+  background: #666;
 }
 
 label,
@@ -43,38 +45,41 @@ input {
 /* État initial de la modale */
 
 #modal-form {
-  display: none;
+  opacity: 0;
 }
 
 /* Animation d'entrée grâce à la pseudo-classe :target */
 
-#modal-form:target {
-  display: block;
+#modal-form.entering {
   animation: scale-in 1s ease 0s 1 normal forwards;
 }
 
 @keyframes scale-in {
 	0% {
 		transform: scale(0);
+    opacity: 0;
 	}
 
 	100% {
 		transform: scale(1);
+    opacity: 1;
 	}
 }
 
 /* Animation de sortie (par défaut) */
 
-#modal-form {
+#modal-form.exiting {
   animation: scale-out 1s ease 0s 1 normal forwards;
 }
 
 @keyframes scale-out {
   0% {
 		transform: scale(1);
+    opacity: 1;
 	}
 
 	100% {
 		transform: scale(0);
+    opacity: 0;
 	}
 }

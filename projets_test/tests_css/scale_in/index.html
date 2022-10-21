@@ -7,15 +7,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Test modale animée CSS</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
 </head>
 
 <body>
-  <a href="#modal-form" class="modal-btn">Ajouter un produit</a>
+  <a href="#modal-form" class="modal-btn" id="open-modal-btn">Ajouter un produit</a>
 
   <form action="#" id="modal-form">
     <label for="product-title">Product title *</label>
     <input type="text" placeholder="Title">
-    <a href="#close-modal" class="modal-btn">Annuler</a>
+    <a href="#" class="modal-btn" id="close-modal-btn">Annuler</a>
   </form>
 </body>
 
