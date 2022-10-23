@@ -11,19 +11,22 @@
   align-items: center;
   justify-content: center;
   /* debug */
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.6);
   z-index: 10;
   visibility: hidden;
 }
 
 /* Styles du formulaire */
 
-#product-form {
+#product-form,
+#confirmation-modal,
+#users-list {
   max-width: 80%;
   background: white;
   color: black;
   padding: 1rem;
-  border-radius: 6px;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.6);
 }
 
 #product-form * {
@@ -55,8 +58,8 @@
   flex: 1;
 }
 
-#product-form .form-input.checkbox-hr input[attr=""] {
-  margin-right: 0.6rem;
+#product-form .form-input.checkbox-hr input[type="checkbox"] {
+  margin-left: 0.6rem;
 }
 
 #product-form .form-input.checkbox-hr > * {
@@ -69,7 +72,9 @@
   margin: 0.2rem 0 0.6rem;
 }
 
-#product-form .button {
+#product-form .button,
+#confirmation-modal .button {
+  display: block;
   text-align: center;
   width: 50%;
   margin-left: auto;
@@ -85,6 +90,84 @@
   background: #2046f2;
 }
 
+/* Styles du message de confirmation */
+
+#confirmation-modal {
+  display: none;
+}
+
+#confirmation-modal .checkmark {
+  color: white;
+  background: #2046f2;
+  font-size: 3rem;
+  width: 5rem;
+  text-align: center;
+  border-radius: 100%;
+  margin: -3rem auto 0 auto;
+
+  display: none;
+}
+
+#confirmation-modal h2 {
+  text-align: center;
+}
+
+#confirmation-modal p {
+  font-size: 1rem;
+}
+
+.bouncing-in-top {
+  animation: bounce-in-top 1000ms ease 0s 1 normal forwards;
+}
+
+.bouncing-in-backward {
+  animation: bounce-in-backward 1000ms ease 0s 1 normal forwards;
+}
+
+/* Styles de la liste d'utilisateurs */
+
+#users-list {
+  display: none;
+  background: #eee;
+  z-index: 11;
+}
+
+#users-list ul {
+  max-height: 90vh;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: auto;
+  justify-content: center;
+  gap: 0.8rem;
+}
+
+#users-list article {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  box-shadow: 1px 1px rgba(0, 0, 0, 0.1);
+  width: 15rem;
+  padding: 0.64rem;
+}
+
+#users-list article p {
+  margin-top: 0.4rem;
+  margin-bottom: 0.4rem;
+}
+
+#users-list article .name {
+  font-size: 1.1rem;
+}
+
+#users-list article .email {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+#users-list article .motto {
+  font-style: italic;
+}
+
 /* media query pour forcer l'affichage du bouton en vue mobile */
 
 @media (max-width: 991px) {
@@ -95,20 +178,24 @@
 
 /* Classes d'animation */
 
+.visible {
+  visibility: visible;
+}
+
 .fading-in {
-  animation: fade-in 1s ease 0s 1 normal forwards;
+  animation: fade-in 1000ms ease 0s 1 normal forwards;
 }
 
 #modal-form-overlay.fading-out {
-  animation: fade-out 1s ease 0s 1 normal forwards;
+  animation: fade-out 1000ms ease 0s 1 normal forwards;
 }
 
 .scaling-in {
-  animation: scale-in 1s ease 0s 1 normal forwards;
+  animation: scale-in 1000mss ease 0s 1 normal forwards;
 }
 
 .scaling-out {
-  animation: scale-out 1s ease 0s 1 normal forwards;
+  animation: scale-out 1000ms ease 0s 1 normal forwards;
 }
 
 /* Changement d'opacité */
@@ -116,6 +203,9 @@
 @keyframes fade-in {
   0% {
     opacity: 0;
+  }
+  25% {
+    opacity: 0.5;
   }
   100% {
     opacity: 1;
@@ -148,5 +238,105 @@
   }
   100% {
     transform: scale(0);
+  }
+}
+
+/* Définition des animations d'entrée de la modale de confirmation */
+
+@keyframes bounce-in-top {
+	0% {
+		animation-timing-function: ease-in;
+		opacity: 0;
+		transform: translateY(-250px);
+	}
+
+	38% {
+		animation-timing-function: ease-out;
+		opacity: 1;
+		transform: translateY(0);
+	}
+
+	55% {
+		animation-timing-function: ease-in;
+		transform: translateY(-65px);
+	}
+
+	72% {
+		animation-timing-function: ease-out;
+		transform: translateY(0);
+	}
+
+	81% {
+		animation-timing-function: ease-in;
+		transform: translateY(-28px);
+	}
+
+	90% {
+		animation-timing-function: ease-out;
+		transform: translateY(0);
+	}
+
+	95% {
+		animation-timing-function: ease-in;
+		transform: translateY(-8px);
+	}
+
+	100% {
+		animation-timing-function: ease-out;
+		transform: translateY(0);
+	}
+}
+
+@keyframes bounce-in-backward {
+	0% {
+		animation-timing-function: ease-in;
+		opacity: 0;
+		transform: scale(7);
+	}
+
+	38% {
+		animation-timing-function: ease-out;
+		opacity: 1;
+		transform: scale(1);
+	}
+
+	55% {
+		animation-timing-function: ease-in;
+		transform: scale(1.5);
+	}
+
+	72% {
+		animation-timing-function: ease-out;
+		transform: scale(1);
+	}
+
+	81% {
+		animation-timing-function: ease-in;
+		transform: scale(1.24);
+	}
+
+	89% {
+		animation-timing-function: ease-out;
+		transform: scale(1);
+	}
+
+	95% {
+		animation-timing-function: ease-in;
+		transform: scale(1.04);
+	}
+
+	100% {
+		animation-timing-function: ease-out;
+		transform: scale(1);
+	}
+}
+
+/* media query pour écrans larges */
+
+@media screen and (width > 991px) {
+  #product-form,
+  #confirmation-modal,
+  #users-list {
+    max-width: 60rem;
   }
 }

@@ -36,7 +36,8 @@
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
-      <a class="navigation__cta button" href="#0" id="open-product-form-btn">Create New Product</a>
+      <a class="navigation__cta button" href="#0"
+        id="open-product-form-btn">Create New Product</a>
       <div class="navigation__burger">
         <span class="navigation__burger-el navigation__burger-el--top"></span>
         <span
@@ -48,8 +49,10 @@
   </div>
   <!-- END SECTION: Navigation -->
 
-  <!-- SECTION: Modal form -->
+  <!-- SECTION: Modal overlay -->
   <aside id="modal-form-overlay">
+
+    <!-- SECTION: New product form -->
     <form action="#" method="#" id="product-form">
       <div class="form-input">
         <label for="product-title">Product title&nbsp;*</label>
@@ -85,10 +88,27 @@
           placeholder="Description" rows="6"></textarea>
       </div>
       <div class="form-input">
-        <a href="#0" class="button confirm-btn">Add Product</a>
-        <a href="#top" class="button" id="close-product-form-btn">Cancel</a>
+        <a href="#confirmation-modal" class="button confirm-btn" id="open-confimation-modal-btn">Add
+          Product</a>
+        <a href="#t0" class="button" id="close-product-form-btn">Cancel</a>
       </div>
     </form>
+
+    <!-- SECTION: Confirmation message -->
+    <section id="confirmation-modal">
+      <p class="checkmark">&check;</p>
+      <h2>Success!</h2>
+      <p>Your new product has been added to the shop database.</p>
+      <p>As a thanking gift, have a look at a list of prospects !</p>
+      <a href="#users-list" class="button confirm-btn" id="open-users-list-btn">Sure!</a>
+    </section>
+
+    <!-- SECTION: Liste utilisateurs -->
+    <section id="users-list">
+      <ul>
+
+      </ul>
+    </section>
   </aside>
 
   <!-- SECTION: Intro -->
