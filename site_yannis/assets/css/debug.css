@@ -1,0 +1,7 @@
+#modal-form-overlay {
+  visibility: visible;
+}
+
+#product-form {
+  display: none;
+}

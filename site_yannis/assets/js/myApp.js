@@ -6,6 +6,7 @@ const openConfirmationBtn = document.querySelector(
   "#open-confimation-modal-btn"
 );
 const fetchUsersBtn = document.querySelector("#open-users-list-btn");
+const closeUsersBtn = document.querySelector("#users-list .close-btn");
 
 // fenêtres modales
 
@@ -131,13 +132,11 @@ function updateUsersList(usersData) {
 
 fetchUsersBtn.addEventListener("click", showUsersList);
 
-/* 
-// hack pour cacher l'overlay quand la liste des utilisateurs est visible
+// showUsersList();
 
-modalOverlayElt.addEventListener("click", function () {
-  console.log(`Click on modal overlay detected`);
-  if (usersListElt.style.display === "block") {
-    usersListElt.style.display = "none";
-    modalOverlayElt.style.visibility = "none";
-  }
-}); */
+// fermeture de la liste d'utilisateurs
+
+closeUsersBtn.addEventListener("click", function () {
+  usersListElt.style.display = "none";
+  modalOverlayElt.style.visibility = "hidden";
+});

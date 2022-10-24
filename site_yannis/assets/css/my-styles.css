@@ -7,9 +7,11 @@
   left: 0;
   bottom: 0;
   right: 0;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   /* debug */
   background: rgba(0, 0, 0, 0.6);
   z-index: 10;
@@ -166,6 +168,27 @@
 
 #users-list article .motto {
   font-style: italic;
+}
+
+/* Styles croix fermeture liste utilisateurs */
+
+#users-list .close-btn {
+  box-sizing: border-box;
+  margin: 0;
+  background: white;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 100%;
+
+  position: relative;
+  top: -14px;
+  left: 94%;
+  
+  font-size: 2rem;
+  text-align: center;
+  line-height: 1.1;
+
+  cursor: pointer;
 }
 
 /* media query pour forcer l'affichage du bouton en vue mobile */
